@@ -4,13 +4,32 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { useCopyToClipboard } from "./hooks/useCopyToClipboard";
 import useLocalStorage from "./hooks/useLocalStorage";
+import useFetch from "./hooks/useFetch";
 
+type User = {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  // ... other properties
+};
 function App() {
   const { isCopied, textRef, copyToClipboard } = useCopyToClipboard();
   const [name, setName] = useLocalStorage("name", "");
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
+  const [data, isLoading, error] = useFetch<User[]>(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <>
       <div>
@@ -25,6 +44,14 @@ function App() {
       <div>
         <input type="text" value={name} onChange={handleNameChange} />
         <p>Hello, {name}!</p>
+      </div>
+      <p>3)useFetch hooks example</p>
+      <div>
+        {data?.map((user) => (
+          <div key={user.id}>
+            <p>{user.name}</p>
+          </div>
+        ))}
       </div>
     </>
   );
