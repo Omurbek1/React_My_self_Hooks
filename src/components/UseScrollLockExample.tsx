@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import useScrollLock from "../hooks/useScrollLock";
 
 function UseScrollLockExample() {

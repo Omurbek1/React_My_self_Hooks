@@ -1,4 +1,4 @@
-import React from "react";
+
 import useList from "../hooks/useList";
 
 type Item = {

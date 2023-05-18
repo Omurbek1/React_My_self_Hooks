@@ -1,11 +1,9 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import { useCopyToClipboard } from "./hooks/useCopyToClipboard";
 import useLocalStorage from "./hooks/useLocalStorage";
 import useFetch from "./hooks/useFetch";
-import useCurrentLocationExample from "./components/UseCurrentLocationExample";
+
 import UseDebouncedValueExample from "./components/UseDebouncedValueExample";
 import UseScrollLockExample from "./components/UseScrollLockExample";
 import UseListExample from "./components/UseListExample";
