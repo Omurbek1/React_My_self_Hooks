@@ -9,6 +9,7 @@ import UseListExample from "./components/UseListExample";
 import UseSearchExample from "./components/UseSearchExample";
 import UseCurrentLocationExample from "./components/UseCurrentLocationExample";
 import UseThemeExample from "./components/UseThemeExample";
+import UseDragExampple from "./components/UseDragExampple";
 
 type User = {
   id: number;
@@ -72,6 +73,9 @@ function App() {
       <UseCurrentLocationExample />
       <p>9)useTheme hooks example</p>
       <UseThemeExample />
+
+      <p>10)useDrag example hooks example</p>
+      <UseDragExampple />
     </>
   );
 }
