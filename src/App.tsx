@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { useCopyToClipboard } from "./hooks/useCopyToClipboard";
 import useLocalStorage from "./hooks/useLocalStorage";
@@ -9,6 +8,7 @@ import UseScrollLockExample from "./components/UseScrollLockExample";
 import UseListExample from "./components/UseListExample";
 import UseSearchExample from "./components/UseSearchExample";
 import UseCurrentLocationExample from "./components/UseCurrentLocationExample";
+import UseThemeExample from "./components/UseThemeExample";
 
 type User = {
   id: number;
@@ -70,6 +70,8 @@ function App() {
       <UseSearchExample />
       <p>8)useCurrentLocation hooks example</p>
       <UseCurrentLocationExample />
+      <p>9)useTheme hooks example</p>
+      <UseThemeExample />
     </>
   );
 }
