@@ -1,45 +1,50 @@
-import { useState, useEffect, useRef } from 'react';
+// import { useState, useEffect, useRef, RefObject } from 'react';
 
-type Position = {
-    x: number;
-    y: number;
-};
+// type Position = {
+//     x: number;
+//     y: number;
+// };
 
-const useDrag = (): [boolean, Position, React.RefObject<HTMLDivElement>] => {
-    const [isDragging, setIsDragging] = useState(false);
-    const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
-    const dragRef = useRef<HTMLDivElement>(null);
+// interface IDivPosition {
+//     divRef: RefObject<HTMLDivElement>;
+// }
 
-    useEffect(() => {
-        const handleMouseMove = (event: MouseEvent) => {
-            if (!isDragging) return;
-            const newPosition: Position = {
-                x: event.clientX,
-                y: event.clientY,
-            };
-            setPosition(newPosition);
-        };
 
-        const handleMouseUp = () => {
-            setIsDragging(false);
-        };
+// const useDrag = (): [boolean, Position, React.RefObject<IDivPosition>] => {
+//     const [isDragging, setIsDragging] = useState(false);
+//     const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+//     const dragRef = useRef<IDivPosition | null>
 
-        if (isDragging) {
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
-        }
+//     useEffect(() => {
+//         const handleMouseMove = (event: MouseEvent) => {
+//             if (!isDragging) return;
+//             const newPosition: Position = {
+//                 x: event.clientX,
+//                 y: event.clientY,
+//             };
+//             setPosition(newPosition);
+//         };
 
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [isDragging]);
+//         const handleMouseUp = () => {
+//             setIsDragging(false);
+//         };
 
-    const handleMouseDown = () => {
-        setIsDragging(true);
-    };
+//         if (isDragging) {
+//             document.addEventListener('mousemove', handleMouseMove);
+//             document.addEventListener('mouseup', handleMouseUp);
+//         }
 
-    return [isDragging, position, dragRef, handleMouseDown];
-};
+//         return () => {
+//             document.removeEventListener('mousemove', handleMouseMove);
+//             document.removeEventListener('mouseup', handleMouseUp);
+//         };
+//     }, [isDragging]);
 
-export default useDrag;
+//     const handleMouseDown = () => {
+//         setIsDragging(true);
+//     };
+
+//     return [isDragging, position, dragRef, handleMouseDown];
+// };
+
+// export default useDrag;
