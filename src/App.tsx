@@ -10,6 +10,7 @@ import useScrollLock from "./hooks/useScrollLock";
 import UseDebouncedValueExample from "./components/UseDebouncedValueExample";
 import UseScrollLockExample from "./components/UseScrollLockExample";
 import UseListExample from "./components/UseListExample";
+import UseSearchExample from "./components/UseSearchExample";
 
 type User = {
   id: number;
@@ -67,6 +68,8 @@ function App() {
       <UseDebouncedValueExample />
       <p>6)useList hooks example</p>
       <UseListExample />
+      <p>7)UseSearchExample hooks example</p>
+      <UseSearchExample />
     </>
   );
 }
