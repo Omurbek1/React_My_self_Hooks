@@ -5,12 +5,12 @@ import "./App.css";
 import { useCopyToClipboard } from "./hooks/useCopyToClipboard";
 import useLocalStorage from "./hooks/useLocalStorage";
 import useFetch from "./hooks/useFetch";
-import useDebouncedValueExample from "./components/UseDebouncedValueExample";
-import useScrollLock from "./hooks/useScrollLock";
+import useCurrentLocationExample from "./components/UseCurrentLocationExample";
 import UseDebouncedValueExample from "./components/UseDebouncedValueExample";
 import UseScrollLockExample from "./components/UseScrollLockExample";
 import UseListExample from "./components/UseListExample";
 import UseSearchExample from "./components/UseSearchExample";
+import UseCurrentLocationExample from "./components/UseCurrentLocationExample";
 
 type User = {
   id: number;
@@ -70,6 +70,8 @@ function App() {
       <UseListExample />
       <p>7)UseSearchExample hooks example</p>
       <UseSearchExample />
+      <p>8)useCurrentLocation hooks example</p>
+      <UseCurrentLocationExample />
     </>
   );
 }
