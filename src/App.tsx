@@ -9,6 +9,7 @@ import UseListExample from "./components/UseListExample";
 import UseSearchExample from "./components/UseSearchExample";
 import UseCurrentLocationExample from "./components/UseCurrentLocationExample";
 import UseThemeExample from "./components/UseThemeExample";
+import useDeviceType from "./hooks/useDeviceType";
 // import UseDragExampple from "./components/UseDragExampple";
 
 type User = {
@@ -22,6 +23,7 @@ type User = {
 function App() {
   const { isCopied, textRef, copyToClipboard } = useCopyToClipboard();
   const [name, setName] = useLocalStorage("name", "");
+ const isMobileTablet= useDeviceType();
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
@@ -76,6 +78,8 @@ function App() {
 
       <p>10)useDrag example hooks example</p>
       {/* <UseDragExampple /> */}
+      <p>11)useDevice type hooks example</p>
+      {isMobileTablet ? <p>Mobile</p> : <p>Tablet</p>}
     </>
   );
 }
